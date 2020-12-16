@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MenuService {
 
-  private MENU_URL = "http://localhost:8080/menu";
+  private MENU_URL = `http://localhost:8080/menu`;
 
   constructor(private httpClient: HttpClient) { }
 
