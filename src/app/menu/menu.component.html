@@ -1,14 +1,14 @@
 <div class="container" *ngFor="let section of menu; let i=index">
-  <div class="row" id="section{{i}}"> <h2>{{section.name}}</h2> </div>
+  <div class="row" id="section{{i}}"><h2>{{ section.name }}</h2> </div>
   <div class="row" *ngFor="let item of section.items; let j=index">
-    <div class="col-sm-3" id="itemName{{j}}"> {{item.name}} </div>
-    <div class="col-sm-3" id="itemPrice{{j}}"> {{item.price | currency:'GBP':'symbol-narrow':'1.2-2'}} </div>
+    <div class="col-sm-3" id="itemName{{j}}">{{ item.name }}</div>
+    <div class="col-sm-3" id="itemPrice{{j}}">{{ item.price | currency:'GBP':'symbol-narrow':'1.2-2' }}</div>
     <div class="col-sm-3" id="itemDropdown{{j}}">
       <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline" id="dropdown" ngbDropdownToggle>{{item.count}}</button>
+        <button class="btn btn-outline" id="dropdown" ngbDropdownToggle>{{ item.count }}</button>
         <div ngbDropdownMenu aria-labelledby="dropdown">
           <div *ngFor="let item of [].constructor(10); let k = index">
-            <button ngbDropdownItem (click)="changeAction(i, j, k)" [value]="k">{{k}}</button>
+            <button ngbDropdownItem (click)="changeAction(i, j, k)" [value]="k">{{ k }}</button>
           </div>
         </div>
       </div>
@@ -17,8 +17,10 @@
   </div>
 </div>
 <div class="container">
-  <div class="row" id="total">
-    <div class="col-sm-3" id="price"> <h2> Total: {{total | currency:'GBP':'symbol-narrow':'1.2-2'}}</h2> </div>
-    <div class="col-sm-3" id="button"><button type="button" class="btn btn-dark">Checkout</button></div>
+  <div class="row justify-content-end" id="total">
+    <div class="col-sm-3"><p>Total: {{ total | currency:'GBP':'symbol-narrow':'1.2-2' }}</p></div>
+  </div>
+  <div class="row justify-content-end" id="total-button">
+    <div class="col-sm-3"><button type="button" class="btn btn-dark">Checkout</button></div>
   </div>
 </div>
