@@ -7,7 +7,7 @@
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-outline" id="dropdown" ngbDropdownToggle>{{ item.count }}</button>
         <div ngbDropdownMenu aria-labelledby="dropdown">
-          <div *ngFor="let item of [].constructor(10); let k = index">
+          <div *ngFor="let _ of [].constructor(10); let k = index">
             <button ngbDropdownItem (click)="changeAction(i, j, k)" [value]="k">{{ k }}</button>
           </div>
         </div>
