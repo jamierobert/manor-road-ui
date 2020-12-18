@@ -20,7 +20,9 @@
   <div class="row justify-content-end" id="total">
     <div class="col-sm-3"><p>Total: {{ total | currency:'GBP':'symbol-narrow':'1.2-2' }}</p></div>
   </div>
-  <div class="row justify-content-end" id="total-button">
-    <div class="col-sm-3"><button type="button" class="btn btn-dark">Checkout</button></div>
+  <div class="row justify-content-end" id="checkout" >
+    <div class="col-sm-3">
+      <button type="button" class="btn btn-dark" (click)="makePayment()" id="checkout-button">Checkout</button>
+    </div>
   </div>
 </div>
